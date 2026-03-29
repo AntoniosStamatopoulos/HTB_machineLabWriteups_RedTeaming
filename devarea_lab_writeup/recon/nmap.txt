@@ -1,1 +1,44 @@
+# Nmap Scan - DevArea HTB
 
+Command used:
+nmap -A 10.129.18.145
+
+Host: devarea.htb (10.129.18.145)
+Status: Up
+
+PORT     STATE SERVICE VERSION
+21/tcp   open  ftp     vsftpd 3.0.5
+| ftp-anon: Anonymous FTP login allowed
+|_ Directory: pub/
+
+22/tcp   open  ssh     OpenSSH 9.6p1 Ubuntu
+
+80/tcp   open  http    Apache httpd 2.4.58 (Ubuntu)
+|_ http-title: DevArea - Connect with Top Development Talent
+
+8080/tcp open  http    Jetty 9.4.27.v20200227
+|_ http-title: Error 404 Not Found
+
+8500/tcp open  http    Golang net/http server
+|_ Info: Proxy service (requires authentication)
+
+8888/tcp open  http    Hoverfly Dashboard
+|_ Service: API / Simulation environment
+
+---
+
+# Key Observations
+
+- FTP allows anonymous access → potential data exposure
+- Web server (Apache) hosts main application
+- Jetty (8080) likely backend service
+- Port 8500 acts as proxy (authentication required)
+- Port 8888 exposes Hoverfly API/dashboard
+
+---
+
+# Initial Attack Surface
+
+- FTP → file retrieval (JAR)
+- Apache CXF service → potential vulnerabilities
+- Hoverfly API → possible misuse / exploitation
