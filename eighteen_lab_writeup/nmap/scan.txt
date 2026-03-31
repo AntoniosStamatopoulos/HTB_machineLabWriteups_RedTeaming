@@ -92,7 +92,7 @@ nmap -sC -sV 10.129.17.95
 
 ####  Observations:
 
-* Database server exposed externally ⚠️
+* Database server exposed externally 
 * Domain Controller name revealed (`DC01`)
 * Domain information leaked:
 
