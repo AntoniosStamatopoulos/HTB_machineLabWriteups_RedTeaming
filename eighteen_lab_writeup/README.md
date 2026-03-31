@@ -66,6 +66,7 @@
 
 * Nmap
 * Gobuster
+* Impacket
 * Hashcat 
 * Evil-WinRM
 
