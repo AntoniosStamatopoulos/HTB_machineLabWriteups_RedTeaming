@@ -52,7 +52,7 @@ Found:
 EXECUTE AS LOGIN = 'appdev';
 ```
 
-👉 Privilege escalation μέσα στο MSSQL
+ Privilege escalation μέσα στο MSSQL
 
 ---
 
