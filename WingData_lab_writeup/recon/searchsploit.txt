@@ -1,0 +1,21 @@
+searchsploit wing ftp
+-------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                            |  Path
+-------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Wing FTP Server - (Authenticated) Command Execution (Metasploit)                                                          | windows/remote/34517.rb
+Wing FTP Server - Authenticated CSRF (Delete Admin)                                                                       | php/webapps/48200.txt
+Wing FTP Server 3.2.4 - Cross-Site Request Forgery                                                                        | multiple/webapps/10821.txt
+Wing FTP Server 4.3.8 - Remote Code Execution (RCE) (Authenticated)                                                       | windows/remote/50720.py
+Wing FTP Server 6.0.7 - Unquoted Service Path                                                                             | windows/local/47818.txt
+Wing FTP Server 6.2.3 - Privilege Escalation                                                                              | windows/local/48160.py
+Wing FTP Server 6.2.5 - Privilege Escalation                                                                              | multiple/webapps/48154.sh
+Wing FTP Server 6.3.8 - Remote Code Execution (Authenticated)                                                             | lua/webapps/48676.txt
+Wing FTP Server 7.4.3 - Unauthenticated Remote Code Execution  (RCE)                                                      | multiple/remote/52347.py
+Wing FTP Server Admin 4.4.5 - Cross-Site Request Forgery (Add User)                                                       | php/webapps/36992.txt
+Wing FTP Server Admin 4.4.5 - Multiple Vulnerabilities                                                                    | windows/webapps/36861.txt
+-------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+Papers: No Results
+
+
+GOLDEN FINDING LINE 73 Unauthenticated Remote Code Execution  (RCE)
