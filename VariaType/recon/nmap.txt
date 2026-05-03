@@ -1,0 +1,29 @@
+                                                                                                                                                                                                                              
+┌──(user㉿kali)-[~/…/htb/htb_labs/machines/VariaType]
+└─$ nmap 10.129.43.164 -A         
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-04-30 13:04 EEST
+Nmap scan report for variatype.htb (10.129.43.164)
+Host is up (0.075s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)
+| ssh-hostkey: 
+|   256 e0:b2:eb:88:e3:6a:dd:4c:db:c1:38:65:46:b5:3a:1e (ECDSA)
+|_  256 ee:d2:bb:81:4d:a2:8f:df:1c:50:bc:e1:0e:0a:d1:22 (ED25519)
+80/tcp open  http    nginx 1.22.1
+|_http-title: VariaType Labs \xE2\x80\x94 Variable Font Generator
+|_http-server-header: nginx/1.22.1
+Device type: general purpose|router
+Running: Linux 5.X, MikroTik RouterOS 7.X
+OS CPE: cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3
+OS details: Linux 5.0 - 5.14, MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT      ADDRESS
+1   84.14 ms 10.10.14.1 (10.10.14.1)
+2   84.27 ms variatype.htb (10.129.43.164)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.50 seconds
