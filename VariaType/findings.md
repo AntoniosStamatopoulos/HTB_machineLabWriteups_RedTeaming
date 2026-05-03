@@ -177,17 +177,17 @@ cat /root/root.txt
 
 # VHost Discovery
 
-→ File Upload Exploit
-→ Arbitrary File Write
-→ Webshell (RCE)
-→ Reverse Shell (www-data)
-→ ZIP Command Injection
-→ Cron Execution
-→ Shell as steve
-→ Sudo Misconfiguration
-→ Arbitrary File Write (root)
-→ SSH Key Injection
-→ Root Access
+- File Upload Exploit
+- Arbitrary File Write
+- Webshell (RCE)
+- Reverse Shell (www-data)
+- ZIP Command Injection
+- Cron Execution
+- Shell as steve
+- Sudo Misconfiguration
+- Arbitrary File Write (root)
+- SSH Key Injection
+- Root Access
 
 
 ## Key Findings
